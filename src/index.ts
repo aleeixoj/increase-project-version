@@ -29,6 +29,9 @@ export function increaseVersion(packageJsonPath: string): void {
       if (answer === '3') {
         soft = (Number(soft) + 1).toString();
       }
+      if (answer === '4') {
+        process.exit();
+      }
 
       // eslint-disable-next-line no-param-reassign
       line = `  "version": "${lts}.${hard}.${soft}",`;

@@ -39,6 +39,10 @@ function increaseVersion(packageJsonPath) {
 
       if (answer === '3') {
         soft = (Number(soft) + 1).toString();
+      }
+
+      if (answer === '4') {
+        process.exit();
       } // eslint-disable-next-line no-param-reassign
 
 
