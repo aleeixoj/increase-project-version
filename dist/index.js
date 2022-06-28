@@ -39,3 +39,5 @@ function increaseVersion(packageJsonPath) {
 
   _fs.default.writeFileSync(packageJsonPath, newPkg.join('\n'));
 }
+
+increaseVersion('./package.json');
