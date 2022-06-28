@@ -27,3 +27,5 @@ export function increaseVersion(packageJsonPath: string): void {
   });
   fs.writeFileSync(packageJsonPath, newPkg.join('\n'));
 }
+
+increaseVersion('./package.json');
