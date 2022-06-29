@@ -82,8 +82,8 @@ yarn add increase-project-version -D
 
 ## :checkered_flag: How to use ##
 
-#add this script in your package.json
-"build-version": "node node_modules/increase-project-version/dist/index.js && npm run build"
+add this script in your package.json:
+"build-version": "npm run build && node node_modules/increase-project-version/dist/index.js"
 
 ```bash
 
