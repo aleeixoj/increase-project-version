@@ -5,6 +5,7 @@ import { copyDistToNewDirectory } from '@utils/copyDistToNewDirectory';
 import { deleteDistFolder } from '@utils/deleteDistFolder';
 
 import { copyVersionToAnotherDist } from './copyVersionToAnotherDist';
+import { gitPushAutomatic } from './gitPushAutomatic';
 
 export async function increaseVersion(packageJsonPath: string) {
   const pkg = fs.readFileSync(packageJsonPath).toString();
@@ -87,7 +88,15 @@ Or
     );
   }
 
-  if (copyToAnotheProject === 'n') {
+  const gitPush = readlineSync.question(
+    `Do you want to do an automatic push to git?[y/n]\n`
+  );
+
+  if (gitPush === 'y') {
+    await gitPushAutomatic(version);
+  }
+
+  if (gitPush === 'n') {
     process.exit();
   }
 }
