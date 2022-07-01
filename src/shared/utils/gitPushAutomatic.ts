@@ -7,5 +7,4 @@ export async function gitPushAutomatic(branch: string) {
   common.execute(`git add .`);
   common.execute(`git commit -m "${branch}"`);
   common.execute(`git push --set-upstream origin ${branch}`);
-  // const gitBranch = await common.execute(`git checkout -b ${branch}`)
 }
